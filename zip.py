@@ -5,7 +5,7 @@ import subprocess
 
 base_dir = sys.argv[1]
 dirs = os.listdir(base_dir)
-MAX_FILES = 2
+MAX_FILES = 500 
 
 for d in dirs:
     path = f'{base_dir}{d}'
