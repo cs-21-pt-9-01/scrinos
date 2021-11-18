@@ -1,15 +1,16 @@
 #!/bin/env bash
 
 # Number of runs
-N=30
+N=200
 # The timeout for a run
-TIMEOUT=60
+TIMEOUT=62.7369
 # Total time = N * TIMEOUT
 
 # Report progress on every X'th iteration
 REPORTI=5
 
 # CPU test loop - stress
+raplrs --name "sleep_baseline" benchmark -n "$N" /home/usr/benchmark_data/scrinos/baseline/sleep.sh "$TIMEOUT"
 raplrs --name "cpu_baseline" benchmark -n "$N" /home/usr/benchmark_data/scrinos/baseline/cpu_baseline.sh "$TIMEOUT"
 
 #for ((i = 0; i < $N; i++))
@@ -52,7 +53,6 @@ raplrs --name "gpu_baseline" benchmark -n "$N" /home/usr/benchmark_data/scrinos/
 #done
 
 # Sleep loop - Idle
-raplrs --name "sleep_baseline" benchmark -n "$N" /home/usr/benchmark_data/scrinos/baseline/sleep.sh "$TIMEOUT"
 
 #for ((i = 0; i < $N; i++))
 #do

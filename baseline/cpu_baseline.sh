@@ -1,3 +1,4 @@
 #!/bin/env bash
-stress --quiet --timeout "$1" --cpu 10
+timeout "$1" stress --quiet --cpu 10
+
 
